@@ -1,0 +1,24 @@
+import threading
+import time
+
+# Allow only 2 threads at a time
+semaphore = threading.Semaphore(2)
+
+def process(name):
+    print(f"{name} is waiting...")
+    with semaphore:
+        print(f"{name} entered critical section")
+        time.sleep(2)
+        print(f"{name} leaving critical section")
+
+threads = []
+
+for i in range(5):
+    t = threading.Thread(target=process, args=(f"Thread {i}",))
+    threads.append(t)
+    t.start()
+
+for t in threads:
+    t.join()
+
+print("Semaphore demo completed!")
