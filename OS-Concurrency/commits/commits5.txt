@@ -1,0 +1,17 @@
+git init                 
+git add .                 
+git commit -m "Initial commit"  
+
+git add Threading.py
+git commit -m "Add Threading Python file"
+
+git add Deadlock.py
+git commit -m "Add Deadlock Python file"
+
+git add Semaphore.py
+git commit -m "Add Semaphore Python file"
+
+
+# # Completion commit
+git add .
+git commit -m "Completion"
